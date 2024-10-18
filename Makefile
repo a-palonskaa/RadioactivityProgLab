@@ -6,7 +6,7 @@ INCLUDE_DIR = include
 SOURCE_DIR  = src
 BUILD_DIR   = build
 
-SOURCES = experiment.c linear_equation.c
+SOURCES = experiment.c linear_equation.c lab.c add_noise.c deviations.c precision_analysis.c nonlinear_equation.c
 SOURCES := $(addprefix $(SOURCE_DIR)/, $(SOURCES))
 
 OBJECTS = $(addprefix $(BUILD_DIR)/, $(SOURCES:%.c=%.o))
