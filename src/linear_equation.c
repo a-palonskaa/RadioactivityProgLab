@@ -1,15 +1,15 @@
 #include "linear_equation.h"
 
-double linear_equation(double * radioactivity, double *time, int N)
+double linear_equation(double *radioactivity, double *time, int N)
 {
 	double TimeSum = 0;
-	double RadioactivitySum = 0;
-
-	for(int i = 0; i < N; i++)
+	double RadioactivityTimeSum = 0;
+	
+	for (int i = 0; i < N; i++)
 	{
-		RadioactivitySum += radioactivity[i];
-		TimeSum += time[i];
+		TimeSum += time[i] * time[i];
+		RadioactivityTimeSum += time[i] * (1 - radioactivity[i]); 
 	}
 
-	return (TimeSum / N) / (1 - RadioactivitySum / N);
+	return TimeSum / RadioactivityTimeSum;
 }
